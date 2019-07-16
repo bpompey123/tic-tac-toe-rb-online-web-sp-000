@@ -118,10 +118,10 @@ def winner(board)
 end
 
 def play(board)
-  turn(board)
-  if !over?(board)
+  until over?(board)
     turn(board)
-  else
-    winner(board)
+  end
+  if won?(board)
+    winner(board) == "X" || winner(board) == "O" 
   end
 end
